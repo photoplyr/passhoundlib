@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4A3EA88416437EE800C79A13 /* libPassHoundLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3EA88316437EE800C79A13 /* libPassHoundLib.a */; };
 		4A7D7F7A1640C9FB0061C4E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A7D7F791640C9FB0061C4E2 /* UIKit.framework */; };
 		4A7D7F7C1640C9FB0061C4E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A7D7F7B1640C9FB0061C4E2 /* Foundation.framework */; };
 		4A7D7F7E1640C9FB0061C4E2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A7D7F7D1640C9FB0061C4E2 /* CoreGraphics.framework */; };
@@ -20,6 +19,7 @@
 		4A7D7F931640C9FB0061C4E2 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A7D7F911640C9FB0061C4E2 /* MainStoryboard.storyboard */; };
 		4A7D7F961640C9FB0061C4E2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7D7F951640C9FB0061C4E2 /* ViewController.m */; };
 		4A7D7F9D1640CBE00061C4E2 /* passhound_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A7D7F9C1640CBE00061C4E2 /* passhound_background.png */; };
+		4AD7160F1644248200A6C4BE /* libPassHoundLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD7160E1644248200A6C4BE /* libPassHoundLib.a */; };
 		4AD8AEB5164377EE0044D24F /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD8AEA9164377EE0044D24F /* SBJsonBase.m */; };
 		4AD8AEB6164377EE0044D24F /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD8AEAB164377EE0044D24F /* SBJsonWriter.m */; };
 		4AD8AEB7164377EE0044D24F /* CSBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD8AEAD164377EE0044D24F /* CSBJsonParser.m */; };
@@ -30,7 +30,6 @@
 
 /* Begin PBXFileReference section */
 		4A3EA88216437EE800C79A13 /* PassHoundLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PassHoundLib.h; sourceTree = "<group>"; };
-		4A3EA88316437EE800C79A13 /* libPassHoundLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPassHoundLib.a; sourceTree = "<group>"; };
 		4A7D7F751640C9FB0061C4E2 /* PassHoundDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PassHoundDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A7D7F791640C9FB0061C4E2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4A7D7F7B1640C9FB0061C4E2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -48,6 +47,7 @@
 		4A7D7F941640C9FB0061C4E2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		4A7D7F951640C9FB0061C4E2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4A7D7F9C1640CBE00061C4E2 /* passhound_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = passhound_background.png; sourceTree = "<group>"; };
+		4AD7160E1644248200A6C4BE /* libPassHoundLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPassHoundLib.a; sourceTree = "<group>"; };
 		4AD8AEA8164377EE0044D24F /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
 		4AD8AEA9164377EE0044D24F /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
 		4AD8AEAA164377EE0044D24F /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 				4A7D7F7A1640C9FB0061C4E2 /* UIKit.framework in Frameworks */,
 				4A7D7F7C1640C9FB0061C4E2 /* Foundation.framework in Frameworks */,
 				4A7D7F7E1640C9FB0061C4E2 /* CoreGraphics.framework in Frameworks */,
-				4A3EA88416437EE800C79A13 /* libPassHoundLib.a in Frameworks */,
+				4AD7160F1644248200A6C4BE /* libPassHoundLib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,7 +115,7 @@
 				4A7D7F941640C9FB0061C4E2 /* ViewController.h */,
 				4A7D7F951640C9FB0061C4E2 /* ViewController.m */,
 				4A3EA88216437EE800C79A13 /* PassHoundLib.h */,
-				4A3EA88316437EE800C79A13 /* libPassHoundLib.a */,
+				4AD7160E1644248200A6C4BE /* libPassHoundLib.a */,
 				4A7D7F9C1640CBE00061C4E2 /* passhound_background.png */,
 				4A7D7F801640C9FB0061C4E2 /* Supporting Files */,
 			);
