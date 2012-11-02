@@ -20,5 +20,6 @@
 -(NSArray *) getBookKeyValue:(int) idBook ;
 -(BOOL) editBook:(NSString *)vals  forPass:(int)idPass;
 -(BOOL) send:(int)bookId email:(NSString *)email emailTemplate:(int)id_email_tmp ;
+-(NSString *) getPassImage:(int)idPass;
 
 @end

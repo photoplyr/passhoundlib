@@ -10,7 +10,6 @@
 
 @interface ViewController : UIViewController <UITextFieldDelegate>
 
-@property (nonatomic,strong) IBOutlet UITextField *user;
-@property (nonatomic,strong) IBOutlet UITextField *pwd;
-@property (nonatomic,strong) IBOutlet UILabel *error;
+@property (nonatomic,strong) IBOutlet UIImageView *passcard;
+@property (nonatomic,strong) IBOutlet UITextField *email;
 @end

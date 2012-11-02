@@ -11,15 +11,15 @@
 
 @interface ViewController () {
     PassHoundLib *sharedManager;
+    int iid;
 }
 
 @end
 
 @implementation ViewController
 
-@synthesize user;
-@synthesize pwd;
-@synthesize error;
+@synthesize passcard;
+@synthesize email;
 
 - (void)viewDidLoad
 {
@@ -29,7 +29,7 @@
     
     //Login to PassHound
     if ([sharedManager login:@"demo@demo.com" password:@"demo"]) {
-        int iid = 0;
+        iid = 0;
         
         // Retrieve the PassHound PassBook Templates
         NSArray *lists = [sharedManager getTemplates];
@@ -57,24 +57,54 @@
         }
         
         // Change the Key Values
-        if (![sharedManager editBook:@"primaryFields_depart_label=PHILADELPHIA&primaryFields_depart_value=PHL" forPass:iid])
+        if (![sharedManager editBook:@"primaryFields_depart_label=Newark&primaryFields_depart_value=NWK" forPass:iid])
             NSLog(@"%@",[sharedManager getError]);
         
-        // Email the Template
-        [sharedManager send:iid email:@"info@passhound.com" emailTemplate:0];
+        
+        NSString *sURL = [sharedManager getPassImage:iid];
+        
+        NSURL *imgUrl=[[NSURL alloc] initWithString:sURL];
+        dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+        
+        //this will start the image loading in bg
+        dispatch_async(concurrentQueue, ^{
+            NSData *image = [[NSData alloc] initWithContentsOfURL:imgUrl];
+            
+            //this will set the image when loading is finished
+            dispatch_async(dispatch_get_main_queue(), ^{
+                passcard.image = [UIImage imageWithData:image];
+            });
+        });
+        
     } else {
         NSLog(@"%@",[sharedManager getError]);
     }
 }
 
+-(IBAction)emailPass:(id)sender {
+    // Email the Template
+    [self.email resignFirstResponder];
+    if ([sharedManager send:iid email:self.email.text emailTemplate:0] ){
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"PassHound" message:@"Pass was emailed!" delegate:self cancelButtonTitle:@"ok" otherButtonTitles:nil];
+        [alert show];
+    }
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     
-    //[textField resignFirstResponder];
+    [textField resignFirstResponder];
+    if ([sharedManager send:iid email:self.email.text emailTemplate:0]) {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"PassHound" message:@"Pass was emailed!" delegate:self cancelButtonTitle:@"ok" otherButtonTitles:nil];
+        [alert show];
+    }
+    
     return YES;
 }
 
 -(void) viewDidAppear:(BOOL)animated {
-    [user becomeFirstResponder];
+    
 }
 
 - (void)didReceiveMemoryWarning
