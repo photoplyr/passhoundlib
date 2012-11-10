@@ -28,7 +28,8 @@
     sharedManager = [[PassHoundLib alloc] init];
     
     //Login to PassHound
-    if ([sharedManager login:@"demo@demo.com" password:@"demo"]) {
+   // if ([sharedManager login:@"demo@demo.com" password:@"demo"]) {
+     if ([sharedManager login:@"troy.simon@gmail.com" password:@"tsim0n"]) {
         iid = 0;
         
         // Retrieve the PassHound PassBook Templates
@@ -38,6 +39,13 @@
         // Obtain the ID of the last PassHound Template
         iid = [[data objectForKey:@"id"] integerValue];
         
+        
+        // Update the image
+        UIImage *image = [UIImage imageNamed:@"passhound.png"];
+        NSData *imageData = UIImagePNGRepresentation(image);
+        
+        NSString *s = [sharedManager postStripImage: imageData forImage:@"strip" forTemplate:iid];
+         
         // Obtain the Key/Values of the PassHound Template
         lists = [sharedManager getTemplateKeyValue:iid];
         
@@ -73,12 +81,20 @@
             //this will set the image when loading is finished
             dispatch_async(dispatch_get_main_queue(), ^{
                 passcard.image = [UIImage imageWithData:image];
+                
+                
             });
         });
         
     } else {
         NSLog(@"%@",[sharedManager getError]);
     }
+}
+
+-(IBAction)savePass:(id)sender {
+    //NSURL *url = [[NSURL alloc] initWithString:[sharedManager getPassURL]];
+    //[[UIApplication sharedApplication] openURL:url];
+  
 }
 
 -(IBAction)emailPass:(id)sender {
