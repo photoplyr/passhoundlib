@@ -44,7 +44,7 @@
         UIImage *image = [UIImage imageNamed:@"passhound.png"];
         NSData *imageData = UIImagePNGRepresentation(image);
         
-        NSString *s = [sharedManager postStripImage: imageData forImage:@"strip" forTemplate:iid];
+        NSString *s = [sharedManager postStripImage: imageData forImage:@"strip.png" forTemplate:iid];
          
         // Obtain the Key/Values of the PassHound Template
         lists = [sharedManager getTemplateKeyValue:iid];
@@ -60,7 +60,7 @@
         // Extract the Key/Values
         NSMutableDictionary *keyvals = [[NSMutableDictionary alloc] initWithCapacity:[a count]];
         
-        for (NSDictionary *d in a) {
+        for (NSDictionary *d in a) {    
             [keyvals setValue:[d objectForKey:@"key"] forKey:[d objectForKey:@"data"]];
         }
         
